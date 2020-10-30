@@ -9,12 +9,14 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 //Components
 import { AppComponent } from './app.component';
-import { SliderComponent } from './slider/slider.component';
+import { SliderComponent } from '../app/components/slider/slider.component';
+import {MovieService} from '../app/services/movie.service';
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { SliderComponent } from './slider/slider.component';
     MatBadgeModule,
     SlickCarouselModule
   ],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
