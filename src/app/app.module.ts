@@ -6,10 +6,12 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HttpClientModule } from '@angular/common/http'
 
 //Components
 import { AppComponent } from './app.component';
 import { SliderComponent } from '../app/components/slider/slider.component';
+
 import { MovieService } from '../app/services/movie.service';
 import { from } from 'rxjs';
 
@@ -24,7 +26,8 @@ import { from } from 'rxjs';
     BrowserAnimationsModule,
     MatIconModule,
     MatBadgeModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    HttpClientModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
