@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie.service';
+import { Movies } from '../../models/movies.model'
 
 @Component({
   selector: 'app-slider',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
 
-  constructor() { }
+  @Input() sliderConfig;
+  @Input() movies: Movies;
+  @Input() title: string;
+
+  constructor(private movie: MovieService) { }
 
   ngOnInit(): void {
+  }
+
+  getMovieVideos(id: number) {
+    this.movie.getVideos(id);
   }
 
 }
