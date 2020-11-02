@@ -39,14 +39,6 @@ export class MovieService {
     });
   }
 
-  getOriginals() : Observable<Movies> {
-    return this.http.get<Movies>(`${this.URL}${endpoint.originals}`, {
-      params : {
-        api_key: this.api_key
-      }
-    });
-  }
-
   getTopRated() : Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.top_rated}`, {
       params : {
