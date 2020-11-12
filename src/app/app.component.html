@@ -25,16 +25,19 @@
     <!-- MAIN AREA -->
     <div class="header__main" id="stickyHeader" [class.sticky]="sticky" #stickyHeader>
       <!-- #stickyHeader is template reference variable -->
+
+      <div class="toggle" (click)="toggleMenu()"></div>
+
       <div class="header__left">
         <a routerLink="/">
           <img src="../assets/NETFLIX-Logo.svg" alt="NETFIX Logo">
         </a> 
-        <ul>
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">TV Shows</a></li>
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">Latest</a></li>
-          <li><a href="#">My List</a></li>
+        <ul class="menu">
+          <li class="active"><a href="#" (click)="toggleMenu()">Home</a></li>
+          <li><a href="#" (click)="toggleMenu()">TV Shows</a></li>
+          <li><a href="#" (click)="toggleMenu()">Movies</a></li>
+          <li><a href="#" (click)="toggleMenu()">Latest</a></li>
+          <li><a href="#" (click)="toggleMenu()">My List</a></li>
         </ul>
       </div>
 

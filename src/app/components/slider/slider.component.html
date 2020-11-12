@@ -4,7 +4,11 @@
     <div class="movie__images">
         <!-- thumbnails = vignettes -->
         <div class="thumbnails"> 
-            <ngx-slick-carousel [config]="sliderConfig" class="carousel" ngxSlickItem>
+            <ngx-slick-carousel 
+                [config]="sliderConfig" 
+                class="carousel" 
+                #slickModal="slick-carousel"
+                ngxSlickItem>
                 <div class="slick-item" *ngFor="let m of movies.results; let i = index">
                     <img src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}">
                     <div class="movieInfo">

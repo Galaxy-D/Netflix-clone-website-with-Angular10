@@ -121,7 +121,6 @@
             margin-left: 40px;
             height: 100%;
             width: 100px;
-            margin-top: 5px;
         }     
         
         li.active {
@@ -196,6 +195,108 @@ ul {
         &:hover {
             color: #696969;
         }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    
+    .header .header__banner h2 {
+        font-size: 32px;
+    }
+
+    .header .header__banner .header__buttons button {
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .header .header__banner .header__buttons button.play-button span {       
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .header .header__banner .header__buttons button.more-button span {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .header .header__main .header__left,    
+    .header .header__main .header__left ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header .header__main .header__left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        img {
+            margin-left: 0;
+        }
+    }
+
+    .header .header__main .header__left ul li {
+        margin-bottom: 30px;
+        
+        a {
+            font-size: 24px;
+            padding-bottom: 10px;
+        }
+
+        a:hover {
+            border-bottom: 5px solid #f0f;
+            border-radius: 2px;
+        }
+        
+    }
+
+    .header .header__main .header__right {
+        height: fit-content;
+    }
+
+    .header .header__main .header__right ul {
+        margin-right: 0px;
+        gap: 10px;
+    }
+
+    .header .header__main .header__left .menu {
+        position: fixed;
+        top: 72px;
+        left: -100%;
+        display: block;
+        padding: 100px 50px;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to bottom,#000, #222);
+        transition: 0.6s;
+        z-index: 99;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .header .header__main .header__left .menu.activated {
+        left: 0;
+    }
+
+    .header .header__main .toggle {
+        width: 40px;
+        height: 40px;
+        background: url(../assets/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+    }
+
+    .header .header__main .toggle.activated {
+        width: 40px;
+        height: 40px;
+        background: url(../assets/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        cursor: pointer;
     }
 }
 
