@@ -16,10 +16,10 @@ img {
 
         div.thumbnails .carousel {
 
-            width: 100%;            
-            display: flex;
+            width: 100%;  
+            display: flex;           
 
-            .slick-item {
+            .slick-item {                
                 transition: all 0.3s ease;
             }
 
@@ -48,4 +48,5 @@ img {
         margin: 0;
     }
 }
+
 

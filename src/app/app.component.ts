@@ -24,8 +24,55 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   sliderConfig = {
     slidesToShow: 9,
     slidesToScroll: 3,
+    dots: true,
     arrows: true,
-    autoplay: false
+    prevArrow: '<button class="slick-arrow slick-prev"><app-svg-icon name="arrow_slider"></app-svg-icon></button>',
+    nextArrow: '<button class="slick-arrow slick-next"><app-svg-icon name="arrow_slider"></app-svg-icon></button>',
+  
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+        }
+      }, 
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+        }
+      }, 
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        }
+      }, 
+      {
+        breakpoint: 661,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+    ]
   };
 
   headerBGUrl: string;
@@ -75,4 +122,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     // windowScroll >= this.header.nativeElement.offsetHeight ? this.sticky =  true : this.sticky =  false;
   }
+
+  toggleMenu() {
+    const menuToggle = document.querySelector('.toggle');
+    menuToggle.classList.toggle('activated');
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('activated');
+  }
+  
 }
