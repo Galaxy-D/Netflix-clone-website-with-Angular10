@@ -24,17 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   sliderConfig = {
     slidesToShow: 9,
     slidesToScroll: 3,
-    dots: true,
-    // arrows: true,    
-    // accessibility: true,
-    // variableWidth: true,
-    // adaptiveHeight: true,
-    // centerMode: true,    
-    // appendArrows: ('app-slider'),
-    // prevArrow: '<button class="slick-arrow slick-prev">😀</button>',
-    // nextArrow: '<button class="slick-arrow slick-next">😀</button>',
-    // variableWidth: true,
-    
+    // arrows: true,     
     responsive: [
       {
         breakpoint: 1800,
@@ -65,7 +55,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         }
       }, 
       {
-        breakpoint: 1000,
+        breakpoint: 991,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
