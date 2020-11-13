@@ -38,7 +38,7 @@
             font-size: 6rem;
             margin-left: 3rem;
             margin-bottom: 6rem;
-            margin-top: 8rem;
+            margin-top: 6rem;
             color: lightgray;
         }
 
@@ -55,7 +55,7 @@
                 border-radius: 5px;
                 outline: none;
                 border: none;
-                margin-left: 50px;
+                margin-left: 40px;
                 cursor: pointer;
 
                 mat-icon {
@@ -199,6 +199,13 @@ ul {
 }
 
 @media screen and (max-width: 991px) {
+
+    .container {
+
+        .header {
+            margin-bottom: 2rem;
+        }
+    }
     
     .header .header__banner h2 {
         font-size: 32px;
@@ -230,8 +237,15 @@ ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        a {
+            align-items: flex-start;
+        }
         
-        img {
+        img {            
+            content: url(../assets/Netflix.png);
+            width: 50px;
+            height: 40px;
             margin-left: 0;
         }
     }
@@ -257,18 +271,18 @@ ul {
 
     .header .header__main .header__right ul {
         margin-right: 0px;
-        gap: 10px;
+        gap: 20px;
     }
 
     .header .header__main .header__left .menu {
         position: fixed;
         top: 72px;
         left: -100%;
-        display: block;
         padding: 100px 50px;
-        text-align: center;
         width: 100%;
         height: 100vh;
+        display: block;        
+        text-align: center;
         background: linear-gradient(to bottom,#000, #222);
         transition: 0.6s;
         z-index: 99;
@@ -300,3 +314,6 @@ ul {
     }
 }
 
+@media screen and (max-width: 481px) {
+
+}

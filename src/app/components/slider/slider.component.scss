@@ -17,9 +17,9 @@ img {
         div.thumbnails .carousel {
 
             width: 100%;  
-            display: flex;           
+            display: flex; 
 
-            .slick-item {                
+            .slick-item {            
                 transition: all 0.3s ease;
             }
 
@@ -49,17 +49,27 @@ img {
     }
 }
 
-@media screen and (max-width: 481px) {
+@media screen and 
+(max-width: 480px) {
 
     .movie {
         .movie__images {
             div.thumbnails .carousel {
+
                 .slick-item img {
-                    width: 100%;
+                    width: 150px;
+                    height: 200px;
                 }
             }
         }
     }
 }
 
-
+@media screen and (max-width: 480px and 661px and 991px and 1200px and 1400px and 1600px and 1800px) {
+    .slick-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
