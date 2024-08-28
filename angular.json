@@ -77,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Netflix-clone-website-with-Angular10:build"
+            "buildTarget": "Netflix-clone-website-with-Angular10:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Netflix-clone-website-with-Angular10:build:production"
+              "buildTarget": "Netflix-clone-website-with-Angular10:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Netflix-clone-website-with-Angular10:build"
+            "buildTarget": "Netflix-clone-website-with-Angular10:build"
           }
         },
         "test": {
