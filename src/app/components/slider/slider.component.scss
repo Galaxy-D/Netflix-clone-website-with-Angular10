@@ -1,0 +1,75 @@
+h2 {
+    font-size: x-large;
+    color: white;
+}
+
+img {
+    border-radius: 5px;
+    // margin: 0px 5px;
+}
+
+.movie {
+
+    margin: 20px 0;
+
+    .movie__images {
+
+        div.thumbnails .carousel {
+
+            width: 100%;  
+            display: flex; 
+
+            .slick-item {            
+                transition: all 0.3s ease;
+            }
+
+            .slick-item:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.movieInfo {
+
+    margin: 5px 0px; 
+    color: white; 
+    font-weight: 500;
+
+    .adultContent {
+        padding: 5px; 
+        border-radius: 25%;
+        background-color: red; 
+        align-items: center;
+    }
+
+    .releasedDate{
+        margin: 0;
+    }
+}
+
+@media screen and 
+(max-width: 480px) {
+
+    .movie {
+        .movie__images {
+            div.thumbnails .carousel {
+
+                .slick-item img {
+                    width: 150px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px and 661px and 991px and 1200px and 1400px and 1600px and 1800px) {
+    .slick-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

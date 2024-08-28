@@ -1,0 +1,24 @@
+<h2>{{title}}</h2>
+
+<div class="movie">
+    <div class="movie__images">
+        <!-- thumbnails = vignettes -->
+        <div class="thumbnails"> 
+            <ngx-slick-carousel 
+                [config]="sliderConfig" 
+                class="carousel" 
+                #slickModal="slick-carousel"
+                ngxSlickItem>
+                <div class="slick-item" *ngFor="let m of movies.results; let i = index">
+                    <img src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}">
+                    <div class="movieInfo">
+                        <ng-template #existingDate>Released : {{m.release_date}}</ng-template>
+                        <p class="releasedDate" *ngIf="m.release_date == null; else existingDate">Released : Date Unavailable</p>
+                        <p>Rating : {{m.vote_average}}</p>
+                        <strong class="adultContent" *ngIf="m.adult">+18</strong>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+</div>

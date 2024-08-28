@@ -1,0 +1,71 @@
+<div class="container">
+
+  <div class="header">
+
+    <!-- BANNER AREA -->
+    <div class="header__banner" [ngStyle] = "{'background-image' : 'linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,1)), url('+headerBGUrl+')'}">
+
+      <h2>{{trending?.results[0].title}}</h2>
+
+      <div class="header__buttons">
+
+        <button class="play-button">
+          <mat-icon>arrow_right</mat-icon>
+          <span>Play</span>
+        </button>
+
+        <button class="more-button">
+          <mat-icon>info</mat-icon>
+          <span>More Info</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- MAIN AREA -->
+    <div class="header__main" id="stickyHeader" [class.sticky]="sticky" #stickyHeader>
+      <!-- #stickyHeader is template reference variable -->
+
+      <div class="toggle" (click)="toggleMenu()"></div>
+
+      <div class="header__left">
+        <a routerLink="/">
+          <img src="../assets/NETFLIX-Logo.svg" alt="NETFIX Logo">
+        </a> 
+        <ul class="menu">
+          <li class="active"><a href="#" (click)="toggleMenu()">Home</a></li>
+          <li><a href="#" (click)="toggleMenu()">TV Shows</a></li>
+          <li><a href="#" (click)="toggleMenu()">Movies</a></li>
+          <li><a href="#" (click)="toggleMenu()">Latest</a></li>
+          <li><a href="#" (click)="toggleMenu()">My List</a></li>
+        </ul>
+      </div>
+
+      <div class="header__right">
+        <ul>
+          <li><a href="#"><mat-icon>search</mat-icon></a></li>
+          <li><a href="#">Children</a></li>
+          <li><a href="#"><mat-icon>card_giftcard</mat-icon></a></li>
+          <li><a href="#"><mat-icon>notifications</mat-icon></a></li>
+          <li><img src="../assets/bussiness-man.svg" alt="avatar" class="avatar"></li>
+        </ul>
+      </div>
+
+    </div>  
+
+  </div>
+
+  <div class="body">    
+    <app-slider title="Trending"    [movies]="trending"   [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Popular"     [movies]="popular"    [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Top Rated"   [movies]="topRated"   [sliderConfig]="sliderConfig"></app-slider>
+    <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider> 
+    <app-slider title="Upcoming"    [movies]="upcoming"   [sliderConfig]="sliderConfig"></app-slider>       
+    <!-- <app-slider title="Latest"      [movies]="latest"     [sliderConfig]="sliderConfig"></app-slider>  -->
+  </div>
+
+  <div class="copyrightText">
+    <p>Copyright 2020 M.BENLAMA All Right Reserved</p>
+  </div>    
+
+</div>

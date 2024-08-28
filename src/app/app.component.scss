@@ -1,0 +1,319 @@
+.body {
+    margin-top: 30rem;
+}
+
+.avatar {
+    width: 25px;
+    height: 25px;
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin-bottom: 6rem;
+    }
+
+    .header__banner {
+
+        background-position: top center;
+        background-size: cover;
+        width: 100%;
+        height: 80vh;
+        position: absolute;        
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;  
+        justify-content: center;    
+        
+        h2 {
+            font-size: 6rem;
+            margin-left: 3rem;
+            margin-bottom: 6rem;
+            margin-top: 6rem;
+            color: lightgray;
+        }
+
+        .header__buttons {
+
+            display: flex;
+
+            button {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                font-size: 20px;
+                padding: 15px 40px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                margin-left: 40px;
+                cursor: pointer;
+
+                mat-icon {
+                    transform: scale(1.25);
+                }
+
+            }        
+
+            button.play-button{
+
+                span {
+                    font-weight: 600;
+                    font-size: 24px;
+                }
+
+                mat-icon {
+                    transform: scale(2.5);
+                }
+            }
+
+            button.more-button {
+                
+                background-color: rgba(112, 113, 109, 0.7);
+
+                mat-icon {
+                    color: lightgray;
+                }
+
+                span {
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .header__main {
+        display: flex;
+        padding: 20px;
+        width: 100%;
+        justify-content: space-between;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        transition: all 0.3s;
+        transition-timing-function: ease-in;
+
+        &.sticky {
+            background-color: #0D0D0D;
+            z-index: 100;
+        }
+    }
+
+    .header__left {
+
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        img {
+            margin-left: 40px;
+            height: 100%;
+            width: 100px;
+        }     
+        
+        li.active {
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .header__right ul {
+        flex: 1;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        li a {
+            color: white;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+
+            > mat-icon {
+                margin-top: 5px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .body {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 20px;
+        position: relative;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .copyrightText {
+        padding: 8px 40px;
+        border-top: 1px solid rgba(0, 0, 0, 1);
+        text-align: center;
+    }
+    
+    .copyrightText p {
+        color: #FFF;
+        font-weight: 500;
+    }
+
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+        display: inline-block;
+        width: fit-content;
+        text-decoration: none;
+        cursor: pointer;
+        color: #a4a4a4;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+        &:hover {
+            color: #696969;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .container {
+
+        .header {
+            margin-bottom: 2rem;
+        }
+    }
+    
+    .header .header__banner h2 {
+        font-size: 32px;
+    }
+
+    .header .header__banner .header__buttons button {
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .header .header__banner .header__buttons button.play-button span {       
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .header .header__banner .header__buttons button.more-button span {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .header .header__main .header__left,    
+    .header .header__main .header__left ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header .header__main .header__left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            align-items: flex-start;
+        }
+        
+        img {            
+            content: url(../assets/Netflix.png);
+            width: 50px;
+            height: 40px;
+            margin-left: 0;
+        }
+    }
+
+    .header .header__main .header__left ul li {
+        margin-bottom: 30px;
+        
+        a {
+            font-size: 24px;
+            padding-bottom: 10px;
+        }
+
+        a:hover {
+            border-bottom: 5px solid #f0f;
+            border-radius: 2px;
+        }
+        
+    }
+
+    .header .header__main .header__right {
+        height: fit-content;
+    }
+
+    .header .header__main .header__right ul {
+        margin-right: 0px;
+        gap: 20px;
+    }
+
+    .header .header__main .header__left .menu {
+        position: fixed;
+        top: 72px;
+        left: -100%;
+        padding: 100px 50px;
+        width: 100%;
+        height: 100vh;
+        display: block;        
+        text-align: center;
+        background: linear-gradient(to bottom,#000, #222);
+        transition: 0.6s;
+        z-index: 99;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .header .header__main .header__left .menu.activated {
+        left: 0;
+    }
+
+    .header .header__main .toggle {
+        width: 40px;
+        height: 40px;
+        background: url(../assets/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+    }
+
+    .header .header__main .toggle.activated {
+        width: 40px;
+        height: 40px;
+        background: url(../assets/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 481px) {
+
+}
