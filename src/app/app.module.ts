@@ -6,7 +6,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { HttpClientModule } from '@angular/common/http'
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 
 //Components
 import { AppComponent } from './app.component';
@@ -15,21 +15,14 @@ import { SliderComponent } from '../app/components/slider/slider.component';
 import { MovieService } from '../app/services/movie.service';
 import { from } from 'rxjs';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    SliderComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatBadgeModule,
-    SlickCarouselModule,
-    HttpClientModule
-  ],
-  providers: [MovieService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        SliderComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatBadgeModule,
+        SlickCarouselModule], providers: [MovieService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
