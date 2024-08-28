@@ -26,7 +26,6 @@
     "rxjs": "~6.5.5",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.0.0",
-    "webpack": "^4.47.0",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
